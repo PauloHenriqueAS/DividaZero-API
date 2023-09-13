@@ -11,6 +11,14 @@ from app import (
     dashboard_router,
 )
 
+def rodar_docker_compose():
+    try:
+        subprocess.run(['docker-compose', 'up'])
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
+rodar_docker_compose()
+
 app = FastAPI(
     title="DividaZero-API",
     description="DívidaZero API - Regularização e Confissão de Dívidas",
