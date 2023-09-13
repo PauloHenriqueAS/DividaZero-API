@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=useradm
+      - POSTGRES_PASSWORD=hacka123
+      - POSTGRES_DB=divzero-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - .data/db:/var/lib/postgresql/data
