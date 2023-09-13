@@ -117,6 +117,21 @@ Git visualizing: https://git-school.github.io/visualizing-git/
 
 Entre no link e divirta-se!
 <hr>
+
+## 🌐 Site
+
+O projeto foi construido usando o framework [FastApi](https://fastapi.tiangolo.com/) versão 0.100.0.
+
+## 🖥️ Execução da Aplicação em Desenvolvimento
+
+- Para rodar a aplicação em desenvolvimento utilize o comando `uvicorn main:app --reload` ele executa a compilação e execução. Navegue até o link gerado no terminal, ex: `http://127.0.0.1:8000`. O aplicativo recarrega automaticamente em caso de mudanças de código em qualquer arquivo que seja modificado.
+
+## 🏗️ Build
+
+## 🚀 Deploy em Produção
+
+<hr>
+
 <div align="center">
     <h1> 🏗️ Padrões de Commits </h1>
 
