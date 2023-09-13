@@ -20,6 +20,9 @@ class UserDb(Base):
     tipo_user = Column(String, index=True)
 
 class EnderecoDb(Base):
+    """
+    Model Endereço Database
+    """
     __tablename__ = 'tb_endereco'
     __table_args__ = {"schema": "saim"}
 
@@ -31,6 +34,9 @@ class EnderecoDb(Base):
     complemento = Column(String, index=True)
 
 class DevedorDB(Base):
+    """
+    Model Devedor Database
+    """
     __tablename__ = 'tb_devedor'
     __table_args__ = {"schema": "saim"}
 
@@ -42,6 +48,9 @@ class DevedorDB(Base):
     nacionalidade = Column(String, index=True, nullable=True)
 
 class CredorDb(Base):
+    """
+    Model Credor Database
+    """
     __tablename__ = 'tb_credor'
     __table_args__ = {"schema": "saim"}
 
@@ -51,6 +60,9 @@ class CredorDb(Base):
     id_endereco = Column(Integer, ForeignKey('EnderecoDb.id_endereco'), index=True)
 
 class DividaDb(Base):
+    """
+    Model Divida Database
+    """
     __tablename__ = 'tb_divida'
     __table_args__ = {"schema": "saim"}
 
@@ -65,6 +77,9 @@ class DividaDb(Base):
     status = Column(String, nullable=False, index=True)
 
 class TermoDividaDb(Base):
+    """
+    Model Termo de confição de divida Database
+    """
     __tablename__ = 'tb_termo_conf_divida'
     __table_args__ = {"schema": "saim"}
 
@@ -77,6 +92,9 @@ class TermoDividaDb(Base):
     assinatura_credor = Column(String, index=True, nullable=True)
 
 class ParcelaDb(Base):
+    """
+    Model Parcela de renegociação de divida Database
+    """
     __tablename__ = 'tb_parcela'
     __table_args__ = {"schema": "saim"}
 
