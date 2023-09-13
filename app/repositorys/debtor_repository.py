@@ -1,30 +1,29 @@
-
 """
-app/Repositorys/image_Repository.py
+app/Repositorys/debtor_repository.py
 
-This module contains image-methods.
+This module contains debtor-methods.
 """
 
-class DashboardRepository:
+class DebtorRepository:
     """
-    return algo
+    Debtor Repository
     """
-    def get_dash_images(self):
+    def get_debtor_by_cnpj(self):
         """
-        return algo
-        """
-        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
-
-    def get_dash_users(self):
-        """
-        return algo
+        Get data address by cnpj
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-    def get_dash_precessing_methods(self):
+    def post_debtor(self):
         """
-        return algo
+        insert new data debtor
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-dashboard_repository  = DashboardRepository()
+    def update_debtor(self):
+        """
+        Update new data debtor
+        """
+        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
+
+debtor_repository  = DebtorRepository()

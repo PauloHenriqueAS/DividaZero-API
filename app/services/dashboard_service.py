@@ -2,8 +2,11 @@
 """
 app/services/image_service.py
 
-This module contains image-methods.
+This module contains dashboard-methods.
 """
+
+from app.models import User
+from app.repositorys.dashboard_repository import dashboard_repository
 
 class DashboardService:
     """

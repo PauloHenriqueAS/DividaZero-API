@@ -1,30 +1,29 @@
-
 """
-app/Repositorys/image_Repository.py
+app/Repositorys/term_repository.py
 
-This module contains image-methods.
+This module contains term-methods.
 """
 
-class DashboardRepository:
+class TermRepository:
     """
-    return algo
+    Term Repository
     """
-    def get_dash_images(self):
+    def get_term_by_id(self):
         """
-        return algo
-        """
-        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
-
-    def get_dash_users(self):
-        """
-        return algo
+        Get data term by id
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-    def get_dash_precessing_methods(self):
+    def post_term(self):
         """
-        return algo
+        insert new data term
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-dashboard_repository  = DashboardRepository()
+    def update_term(self):
+        """
+        Update data term
+        """
+        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
+
+term_repository = TermRepository()

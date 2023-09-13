@@ -1,30 +1,29 @@
-
 """
-app/Repositorys/image_Repository.py
+app/Repositorys/lender_repository.py
 
-This module contains image-methods.
+This module contains lender-methods.
 """
 
-class DashboardRepository:
+class LenderRepository:
     """
-    return algo
+    Lender Repository
     """
-    def get_dash_images(self):
+    def get_lerder_by_cpf(self):
         """
-        return algo
-        """
-        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
-
-    def get_dash_users(self):
-        """
-        return algo
+        Get data lender by cpf
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-    def get_dash_precessing_methods(self):
+    def post_lender(self):
         """
-        return algo
+        insert new data lender
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-dashboard_repository  = DashboardRepository()
+    def update_lender(self):
+        """
+        Update data lender
+        """
+        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
+
+lender_repository  = LenderRepository()

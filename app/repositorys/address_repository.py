@@ -1,30 +1,30 @@
 
 """
-app/Repositorys/image_Repository.py
+app/Repositorys/address_repository.py
 
-This module contains image-methods.
+This module contains address-methods.
 """
 
-class DashboardRepository:
+class AddressRepository:
     """
-    return algo
+    Address Repository
     """
-    def get_dash_images(self):
+    def get_address_by_cep(self):
         """
-        return algo
-        """
-        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
-
-    def get_dash_users(self):
-        """
-        return algo
+        Get data address by cep
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-    def get_dash_precessing_methods(self):
+    def post_address(self):
         """
-        return algo
+        insert new data address
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-dashboard_repository  = DashboardRepository()
+    def update_address(self):
+        """
+        Update new data address
+        """
+        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
+
+address_repository  = AddressRepository()
