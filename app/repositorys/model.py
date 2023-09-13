@@ -74,7 +74,7 @@ class TermoDividaDb(Base):
     termo_renegociacao = Column(Text, index=True)
     data_renegociacao = Column(Date, index=True)
     assinatura_devedor = Column(String, index=True, nullable=True)
-    assinatura_devedor = Column(String, index=True, nullable=True)
+    assinatura_credor = Column(String, index=True, nullable=True)
 
 class ParcelaDb(Base):
     __tablename__ = 'tb_parcela'
