@@ -1,30 +1,29 @@
-
 """
-app/Repositorys/image_Repository.py
+app/Repositorys/debt_repository.py
 
-This module contains image-methods.
+This module contains debt-methods.
 """
 
-class DashboardRepository:
+class DebtRepository:
     """
-    return algo
+    Debt Repository
     """
-    def get_dash_images(self):
+    def get_debt_by_id(self):
         """
-        return algo
-        """
-        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
-
-    def get_dash_users(self):
-        """
-        return algo
+        Get data debt by id
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-    def get_dash_precessing_methods(self):
+    def post_debt(self):
         """
-        return algo
+        insert new data debt
         """
         return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
 
-dashboard_repository  = DashboardRepository()
+    def update_debt(self):
+        """
+        Update new data debt
+        """
+        return {"mensagem": "dados para dash estatisticas dos metodos de processamento de imagem"}
+
+debt_repository  = DebtRepository()
