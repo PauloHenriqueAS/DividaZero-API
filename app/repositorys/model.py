@@ -32,6 +32,9 @@ class EnderecoDb(Base):
     numero = Column(Integer, index=True) 
     cep = Column(String,nullable=False, index=True)
     complemento = Column(String, index=True)
+    cidade = Column(String, index=True)
+    estado = Column(String, index=True)
+
 
 class DevedorDB(Base):
     """
@@ -75,6 +78,7 @@ class DividaDb(Base):
     montante_valor = Column(Double, nullable=False, index=True)
     montante_atrasado = Column(Double, nullable=False, index=True)
     status = Column(String, nullable=False, index=True)
+    produto = Column(String,nullable=False,index=True)
 
 class TermoDividaDb(Base):
     """
