@@ -40,12 +40,14 @@ class Endereco(BaseModel):
     numero: Optional[int] = None
     cep: Optional[str] = None
     complemento: Optional[str] = None
+    cidade: Optional[str] = None
+    estado: Optional[str] = None
 
 class Credor(BaseModel):
     """
     Model of Credor
     """
-    id_credor = Optional[str] = None
+    id_credor: Optional[str] = None
     id_user: Optional[str] = None
     nome: Optional[str] = None
     cnpj: Optional[str] = None
@@ -64,6 +66,7 @@ class Divida(BaseModel):
     montante_valor:  Optional[float] = None
     montante_atrasado: Optional[float] = None
     status: Optional[StatusEnum] = None
+    produto: Optional[str] = None
 
 class TermoDivida(BaseModel):
     """
