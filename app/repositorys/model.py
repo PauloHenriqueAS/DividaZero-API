@@ -78,6 +78,7 @@ class DividaDb(Base):
     montante_valor = Column(Double, nullable=False, index=True)
     montante_atrasado = Column(Double, nullable=False, index=True)
     status = Column(String, nullable=False, index=True)
+    produto = Column(String,nullable=False,index=True)
 
 class TermoDividaDb(Base):
     """

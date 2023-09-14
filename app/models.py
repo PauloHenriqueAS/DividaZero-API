@@ -64,6 +64,7 @@ class Divida(BaseModel):
     montante_valor:  Optional[float] = None
     montante_atrasado: Optional[float] = None
     status: Optional[StatusEnum] = None
+    produto: Optional[str] = None
 
 class TermoDivida(BaseModel):
     """
