@@ -17,21 +17,13 @@ from app import (
     user_router,
 )
 
-def rodar_docker_compose():
-    try:
-        subprocess.run(['docker-compose', 'up'])
-    except Exception as e:
-        print(f"Ocorreu um erro: {e}")
-
-rodar_docker_compose()
-
 app = FastAPI(
     title="DividaZero-API",
     description="DívidaZero API - Regularização e Confissão de Dívidas",
     version="1.0.0",
     )
 
-#app.include_router(authentication_router, prefix="/authentication", tags=["Authentication"])
+# app.include_router(authentication_router, prefix="/authentication", tags=["Authentication"])
 app.include_router(address_router, prefix="/address", tags=["Address"])
 app.include_router(dashboard_router, prefix="/dashboard", tags=["Dashboard"])
 app.include_router(debt_router, prefix="/debt", tags=["Debt"])
