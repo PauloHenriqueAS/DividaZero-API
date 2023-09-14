@@ -32,6 +32,9 @@ class EnderecoDb(Base):
     numero = Column(Integer, index=True) 
     cep = Column(String,nullable=False, index=True)
     complemento = Column(String, index=True)
+    cidade = Column(String, index=True)
+    estado = Column(String, index=True)
+
 
 class DevedorDB(Base):
     """

@@ -39,6 +39,8 @@ class Endereco(BaseModel):
     numero: Optional[int] = None
     cep: Optional[str] = None
     complemento: Optional[str] = None
+    cidade: Optional[str] = None
+    estado: Optional[str] = None
 
 class Credor(BaseModel):
     """
