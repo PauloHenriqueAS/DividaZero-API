@@ -16,6 +16,8 @@ from app import (
     term_router,
     user_router,
 )
+import subprocess
+
 
 def rodar_docker_compose():
     try:
