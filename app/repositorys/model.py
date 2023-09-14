@@ -41,6 +41,7 @@ class DevedorDB(Base):
     __table_args__ = {"schema": "saim"}
 
     id_devedor = Column(String, primary_key=True, index=True)
+    id_user = Column(Integer,ForeignKey('UserDb.id_user'),index=True, nullable=True)
     cpf = Column(String, index=True, nullable=False)
     nome = Column(String, index=True, nullable=True)
     id_endereco = Column(Integer, ForeignKey('EnderecoDb.id_endereco'), index=True, nullable=True)
@@ -55,6 +56,7 @@ class CredorDb(Base):
     __table_args__ = {"schema": "saim"}
 
     id_credor = Column(String, primary_key=True, index=True)
+    id_user = Column(Integer,ForeignKey('UserDb.id_user'),index=True, nullable=True)
     nome = Column(String, index=True)
     cnpj = Column(String, index=True)
     id_endereco = Column(Integer, ForeignKey('EnderecoDb.id_endereco'), index=True)
