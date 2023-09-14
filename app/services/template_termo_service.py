@@ -1,3 +1,6 @@
+from models import Devedor, Credor, Divida, TermoDivida
+
+
 termo_de_confissao = '''
 <!DOCTYPE html>
 <html>
@@ -7,18 +10,18 @@ termo_de_confissao = '''
 </head>
 <body>
     <h1>TERMO DE RENEGOCIAÇÃO CONTRATUAL E CONFISSÃO DE DÍVIDAS</h1>
-    <strong>Cliente: {cliente.nome}</strong><br>
-    <strong>Produto: {divida.produto}</strong><br>
-    <p>{cliente.nome},{cliente.nacionalidade}, inscrito(a) no CPF sob nº {devedor.cpf}, {devedor.estado_civil},residente à {devedor.endereco.logradouro},{devedor.endereco.numero}, Bairro {devedor.endereco.bairro}, {devedor.endereco.cidade} - {devedor.endereco.estado}, doravante denominado CONFIDENTE DEVEDOR, e</p>
-    <p>{credor.nome} - CNPJ: {credor.cnpj}, localizada na {credor.endereco.logradouro}, {credor.endereco.numero}, bairro {credor.endereco.bairro}, na cidade {credor.endereco.cidade} - {credor.endereco.estado}, doravante denominada CREDORA</p>
+    <strong>Cliente: {clienteNome}</strong><br>
+    <strong>Produto: {produto}</strong><br>
+    <p>{clienteNome},{clienteNacionalidade}, inscrito(a) no CPF sob nº {devedorCPF}, {devedorEstadoCivil},residente à {devedor.endereco.logradouro},{devedor.endereco.numero}, Bairro {devedor.endereco.bairro}, {devedor.endereco.cidade} - {devedor.endereco.estado}, doravante denominado CONFIDENTE DEVEDOR, e</p>
+    <p>{credorNome} - CNPJ: {credorCNPJ}, localizada na {credorEndereco}, {credorEnderecoNmr}, bairro {credorBairro}, na cidade {credorCidade} - {credorEstado}, doravante denominada CREDORA</p>
     <p>E todos, em conjunto, denomindos PARTES, têm justo e acordado o presente "Termo de Renegociação Contratual e Confissão de Dívida", que se regerá pelos termos, clausulas e condições abaixo:</p>
     <p>Considerando que:</p>
-    <p>{dividas.termo}</p>
+    <p>{dividaTermo}</p>
     <h2>CLÁUSULA PRIMEIRA</h2>
     <p>Pelo presente, o CONFIDENTE DEVEDOR, reconhece perante a CREDORA a dívida originária do restante do saldo devedor referente ao produto e demais adicionais, se houver, conforme objeto e valor(es) abaixo especificados:</p>
     <ol>
-        <li><p>A importancia de R$ {divida.atraso} ({divida.atraso}), referente ao restante do saldo devedor correspondente ao produto descrito no considerando, acima, a ser paga na seguionte forma de financiamento</p></li>
-        {divida.parcelas}
+        <li><p>A importancia de R$ {dividaAtraso} ({dividaAtraso}), referente ao restante do saldo devedor correspondente ao produto descrito no considerando, acima, a ser paga na seguionte forma de financiamento</p></li>
+        {dividaParcelas}
     </ol>
 
     <h2>CLÁUSULA TERCEIRA</h2>
@@ -37,3 +40,18 @@ termo_de_confissao = '''
 </body>
 </html>
 '''
+
+# Segue abaixo uma pessima pratica
+# TODO: Corrigir
+
+def render(devedor: Devedor, credor: Credor, divida: Divida, termo: TermoDivida):
+    termo_preenchido = termo_de_confissao.format(
+        ClieteNome = devedor.nome,
+        produto = divida.produto,
+        clienteNacionalidade = '',
+        devedorCPF = devedor.cpf,
+        credorNome = credor.nome,
+        credorCNPJ = credor.cnpj,
+        credorEndereco = '',
+        
+    )
