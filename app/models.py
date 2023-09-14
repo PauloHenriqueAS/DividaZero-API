@@ -4,10 +4,10 @@ models.py
 This module contains all models that are being used in api.
 """
 
-from enum import Enum
 from typing import Optional, Text
 from pydantic import BaseModel
 from datetime import date
+from .enums import NacionalidadeEnum, StatusEnum, EstadoCivil
 
 class User(BaseModel):
     """
@@ -18,7 +18,6 @@ class User(BaseModel):
     password_user: str
     tipo_user: Optional[int] = None
 
-
 class Devedor(BaseModel):
     """
     Model of Devedor
@@ -27,8 +26,8 @@ class Devedor(BaseModel):
     cpf: str
     nome: Optional[str] = None
     id_endereco: Optional[int] = None
-    estado_civil: Optional[str] = None
-    nacionalidade: Optional[str] = None
+    estado_civil: Optional[EstadoCivil] = None
+    nacionalidade: Optional[NacionalidadeEnum] = None
 
 class Endereco(BaseModel):
     """
@@ -41,7 +40,6 @@ class Endereco(BaseModel):
     cep: Optional[str] = None
     complemento: Optional[str] = None
 
-
 class Credor(BaseModel):
     """
     Model of Credor
@@ -50,7 +48,6 @@ class Credor(BaseModel):
     nome: Optional[str] = None
     cnpj: Optional[str] = None
     id_endereco: Optional[int] = None
-
 
 class Divida(BaseModel):
     """
@@ -64,8 +61,7 @@ class Divida(BaseModel):
     data_divida: Optional[date] = None
     montante_valor:  Optional[float] = None
     montante_atrasado: Optional[float] = None
-    status: Optional[str] = None
-
+    status: Optional[StatusEnum] = None
 
 class TermoDivida(BaseModel):
     """
@@ -79,7 +75,6 @@ class TermoDivida(BaseModel):
     assinatura_devedor: Optional[str] = None
     assinatura_credor: Optional[str] = None
 
-
 class Parcela(BaseModel):
     """
     Model of Parcela
@@ -89,133 +84,3 @@ class Parcela(BaseModel):
     valor_parcela: Optional[float] = None
     data_vencimento: Optional[date] = None
     parcela_paga: Optional[bool] = None
-
-
-class NacionalidadeEnum(str, Enum):
-    """
-    Enum with all nationalities in brasilian portuguese 
-    """
-    ARGENTINO = "Argentino"
-    AFEGÃO = "Afegão"
-    ALEMÃ = "Alemã"
-    AMERICANO = "Americano"
-    ANGOLANO = "Angolano"
-    ANTIGUANO = "Antiguano"
-    ARGÉLIA = "Argélia"
-    ARMENO = "Armeno"
-    AUSTRALIANO = "Australiano"
-    AUSTRÍAC = "Austríac"
-    BAHAMENSE = "Bahamense"
-    BANGLADESH = "Bangladesh"
-    BECHUANO = "Bechuano"
-    BELGA = "Belga"
-    BELIZENHO = "Belizenho"
-    BOLIVIANO = "Boliviano"
-    BRASILEIRO = "Brasileiro"
-    CAMARONENSE = "Camaronense"
-    CANADENSE = "Canadense"
-    CHILENO = "Chileno"
-    CHINÊS = "Chinês"
-    CINGALÊS = "Cingalês"
-    COLOMBIANO = "Colombiano"
-    COMORENSE = "Comorense"
-    COSTARRIQUENHO = "Costarriquenho"
-    CROATA = "Croata"
-    CUBANO = "Cubano"
-    DINAMARQUÊS = "Dinamarquês"
-    DOMINICANA = "Dominicana"
-    DOMINICANO = "Dominicano"
-    EGÍPCIO = "Egípcio"
-    EQUATORIANO = "Equatoriano"
-    ESCOCÊS = "Escocês"
-    ESLOVACO = "Eslovaco"
-    ESLOVENO = "Esloveno"
-    ESPANHOL = "Espanhol"
-    FILIPINA = "Filipina"
-    FRANCÊS = "Francês"
-    GALÊS = "Galês"
-    GANÉS = "Ganés"
-    GRANADINO = "Granadino"
-    GREGO = "Grego"
-    GUATEMALTECO = "Guatemalteco"
-    GUIANENSE = "Guianense"
-    GUIANÊS = "Guianês"
-    HAITIANO = "Haitiano"
-    HOLANDÊS = "Holandês"
-    HONDURENHO = "Hondurenho"
-    HÚNGARO = "Húngaro"
-    IEMENITA = "Iemenita"
-    INDIANO = "Indiano"
-    INDONÉSIO = "Indonésio"
-    INGLÊS = "Inglês"
-    IRANIANO = "Iraniano"
-    IRAQUIANO = "Iraquiano"
-    IRLANDÊS = "Irlandês"
-    ISRAELITA = "Israelita"
-    ITALIANO = "Italiano"
-    JAMAICANO = "Jamaicano"
-    JAPONÊS = "Japonês"
-    LÍBIO = "Líbio"
-    MALAIO = "Malaio"
-    MARFINENSE = "Marfinense"
-    MARROQUINO = "Marroquino"
-    MEXICANO = "Mexicano"
-    MOÇAMBICANO = "Moçambicano"
-    NAMIBIANA = "Namibiana"
-    NEOZELANDÊS = "Neozelandês"
-    NEPALÊS = "Nepalês"
-    NICARAGUENSE = "Nicaraguense"
-    NIGERIANO = "Nigeriano"
-    NORTE_COREANO = "Norte-coreano"
-    NORUEGO = "Noruego"
-    OMANENSE = "Omanense"
-    PALESTINO = "Palestino"
-    PANAMENHO = "Panamenho"
-    PAQUISTANÊS = "Paquistanês"
-    PARAGUAIO = "Paraguaio"
-    PERUANO = "Peruano"
-    POLONÊS = "Polonês"
-    PORTORRIQUENHO = "Portorriquenho"
-    PORTUGUESA = "Portuguesa"
-    QATARENSE = "Qatarense"
-    QUENIANO = "Queniano"
-    ROMENO = "Romeno"
-    RUANDÊS = "Ruandês"
-    RUSSO = "Russo"
-    SALVADORENHO = "Salvadorenho"
-    SANTA_LUCENSE = "Santa-lucense"
-    SAUDITA = "Saudita"
-    SOMALI = "Somali"
-    SUECO = "Sueco"
-    SUL_AFRICANO = "Sul-Africano"
-    SUL_AFRICANO = "Sul-africano"
-    SUL_COREANO = "Sul-coreano"
-    SURINAMÊS = "Surinamês"
-    SUÍÇO = "Suíço"
-    SÃO_CRISTOVENSE = "São-cristovense"
-    SÃO_VICENTINO = "São-vicentino"
-    SÉRVIO = "Sérvio"
-    SÍRIO = "Sírio"
-    TAILANDÊS = "Tailandês"
-    TIMORENSE = "Timorense"
-    TRINDADENSE = "Trindadense"
-    TURCO = "Turco"
-    UCRANIANO = "Ucraniano"
-    UGANDENSE = "Ugandense"
-    URUGUAIO = "Uruguaio"
-    VENEZUELANO = "Venezuelano"
-    VIETNAMITA = "Vietnamita"
-    ZIMBABUENSE = "Zimbabuense"
-    ZIMBABWEANO = "Zimbabweano"
-    BARBADENSE = "barbadense"
-    ÁRABE = "Árabe"
-    OUTRO = "Outro"
-
-class StatusEnum(str, Enum):
-    """
-    Enum of Divida states
-    """
-    QUITADA = "Paga"
-    ABERTA = "Aberta"
-    ATRASADA = "Atrasada"
-    RENEGOCIADA = "Renegociada"
