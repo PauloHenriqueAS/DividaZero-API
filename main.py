@@ -3,7 +3,7 @@ main.py
 
 Configurations of FastAPI
 """
-
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from app import (
     address_router,
@@ -24,6 +24,13 @@ app = FastAPI(
     title="DividaZero-API",
     description="DívidaZero API - Regularização e Confissão de Dívidas",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # app.include_router(authentication_router, prefix="/authentication", tags=["Authentication"])

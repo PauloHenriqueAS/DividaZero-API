@@ -15,8 +15,11 @@ class User(BaseModel):
     """
     id_user: Optional[int] = None
     email_user: str
+    full_name: Optional[str] = None
+    citizenship: Optional[str] = None
     password_user: str
     tipo_user: Optional[str] = None
+    id_endereco: Optional[int] = None
 
 class Devedor(BaseModel):
     """
@@ -35,7 +38,7 @@ class Endereco(BaseModel):
     Model of Endereco
     """    
     id_endereco: Optional[int] = None
-    lograduro: Optional[str] = None
+    logradouro: Optional[str] = None
     bairro: Optional[str] = None
     numero: Optional[int] = None
     cep: Optional[str] = None
@@ -43,6 +46,13 @@ class Endereco(BaseModel):
     cidade: Optional[str] = None
     estado: Optional[str] = None
 
+class UserWithEndereco(BaseModel):
+    """
+    Model of UserWithEndereco
+    """
+    user: User
+    endereco: Endereco
+    
 class Credor(BaseModel):
     """
     Model of Credor

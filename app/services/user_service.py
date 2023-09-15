@@ -4,11 +4,22 @@ app/services/user_service.py
 This module contains user-methods.
 """
 import hashlib
-from app.models import User
+from app.models import User, UserWithEndereco
 from app.repositorys.user_repository import user_repository
 from sqlalchemy.exc import IntegrityError
 
 class UserService:
+    """
+    User Service with logic
+    """
+
+    def login(self, data_user: User):
+        """
+        Login user
+        """
+        data_user.password_user = encript_password_user(data_user.password_user)
+        return user_repository.login_user(data_user)
+    
     """
     User Service with logic
     """
@@ -24,15 +35,15 @@ class UserService:
         """
         return {"mensagem": f"dados do usurio para autenticação = {data_user}"}
 
-    def post_user(self, data_user: User):
+    def post_user(self, data: UserWithEndereco):
         """
         Insert new user data
         """
         try:
-            data_user.id_user = user_repository.generate_id_user()
-            data_user.password_user = encript_password_user(data_user.password_user)
-            data_user.tipo_user = 'user'
-            return user_repository.post_user(data_user)
+            data.user.id_user = user_repository.generate_id_user()
+            data.user.password_user = encript_password_user(data.user.password_user)
+            data.user.tipo_user = 'user'
+            return user_repository.post_user(data.user)
         except IntegrityError as error:
             return {f"Erro na encriptação da senha. tente novamente. ERRO: {error}"}
 
