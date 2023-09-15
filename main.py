@@ -16,9 +16,9 @@ from app import (
     term_router,
     user_router,
 )
-from app.db.database import init_db
+# from app.db.database import init_db
 
-init_db()
+# init_db()
 
 app = FastAPI(
     title="DividaZero-API",

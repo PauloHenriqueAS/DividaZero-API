@@ -31,6 +31,7 @@ class UserService:
         try:
             data_user.id_user = user_repository.generate_id_user()
             data_user.password_user = encript_password_user(data_user.password_user)
+            data_user.tipo_user = 'user'
             return user_repository.post_user(data_user)
         except IntegrityError as error:
             return {f"Erro na encriptação da senha. tente novamente. ERRO: {error}"}

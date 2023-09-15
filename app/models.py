@@ -16,7 +16,7 @@ class User(BaseModel):
     id_user: Optional[int] = None
     email_user: str
     password_user: str
-    tipo_user: Optional[int] = None
+    tipo_user: Optional[str] = None
 
 class Devedor(BaseModel):
     """
