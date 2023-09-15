@@ -68,7 +68,7 @@ termo_algar = '''
 
         <h2>CLÁUSULA TERCEIRO - PAGAMENTO</h2>
         <ol>
-            <li><p>Em decorrência do reconhecimento e confissão da dívida mencionada na Cláusula Segunda, o <strong>DEVEDOR</strong> pagará ao <strong>CREDOR</strong> a importância <strong>R$ {dividaValor} ({dividas})</strong> da seguinte forma: </p>
+            <li><p>Em decorrência do reconhecimento e confissão da dívida mencionada na Cláusula Segunda, o <strong>DEVEDOR</strong> pagará ao <strong>CREDOR</strong> a importância <strong>R$ {dividaValor} ({dividaExt})</strong> da seguinte forma: </p>
             <ol>
                 {parcelas}
             </ol></li>
@@ -100,7 +100,7 @@ termo_algar = '''
         </ol>
 
         <p>E, por estarem assim justas e contratadas, firmam as partes o presente instrumento em duas vias de igual teor e forma, na presença das testemunhas abaixo assinadas.</p>
-        <p>{credoCidade} - {credorUF}, {termoData}</p>
+        <p>{credorCidade} - {credorUF}, {termoData}</p>
 
         <strong>CONFIDENTE DEVEDOR:</strong><br>
         <strong>CREDOR:</strong>
