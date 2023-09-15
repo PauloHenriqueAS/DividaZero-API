@@ -46,7 +46,8 @@ class UserRepository :
             data_new_user_db = UserDb(
                 id_user=data_user.id_user,
                 email_user=data_user.email_user,
-                password_user=data_user.password_user
+                password_user=data_user.password_user,
+                tipo_user=data_user.tipo_user
             )
 
             db.add(data_new_user_db)

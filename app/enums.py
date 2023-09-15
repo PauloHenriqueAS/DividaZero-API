@@ -139,3 +139,8 @@ class EstadoCivil(str, Enum):
     DIVORCIADO = "Divorciado(a)"
     VIUVO = "Viúvo(a)"
     UNIAO_ESTAVEL = "União Estável"
+
+class TipoUserEnum(str,Enum):
+    ADM = "Administrador"
+    USER = "Usuario"
+    EMPRESA = "Empresa"
