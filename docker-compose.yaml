@@ -7,6 +7,6 @@ services:
       - POSTGRES_PASSWORD=hacka123
       - POSTGRES_DB=divzero-db
     ports:
-      - "5432:5432"
+      - "5488:5432" # Verificar se essa porta está disponível, caso não substitua o 5488
     volumes:
       - .data/db:/var/lib/postgresql/data
