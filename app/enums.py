@@ -140,7 +140,7 @@ class EstadoCivil(str, Enum):
     VIUVO = "Viúvo(a)"
     UNIAO_ESTAVEL = "União Estável"
 
-class TipoUserEnum(srt,Enum):
+class TipoUserEnum(str,Enum):
     ADM = "Administrador"
     USER = "Usuario"
     EMPRESA = "Empresa"
