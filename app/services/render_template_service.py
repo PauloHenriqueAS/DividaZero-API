@@ -1,5 +1,5 @@
 import pdfkit
-from .template_termo_service import termo_algar
+from template_termo_service import termo_algar
 from models import Devedor, Credor, Divida
 from datetime import date
 

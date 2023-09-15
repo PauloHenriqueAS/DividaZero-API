@@ -44,7 +44,7 @@ class Credor(BaseModel):
     """
     Model of Credor
     """
-    id_credor = Optional[str] = None
+    id_credor: Optional[str] = None
     nome: Optional[str] = None
     cnpj: Optional[str] = None
     id_endereco: Optional[int] = None
