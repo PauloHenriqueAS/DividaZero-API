@@ -10,6 +10,13 @@ from app.services import user_service
 
 router = APIRouter()
 
+@router.post("/login")
+def login(data_user: User):
+    """
+    Return status from user login
+    """
+    return user_service.login(data_user)
+
 @router.get("/GetUsuarioByCode")
 def get_user_by_code(email_user: str):
     """

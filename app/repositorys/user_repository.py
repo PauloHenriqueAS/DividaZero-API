@@ -35,7 +35,15 @@ class UserRepository :
                 return { user }
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
+
+    def login_user(self, data_user: User):
+        user = self.get_user_by_code(data_user.email_user)
         
+        if user and user.password_user == data_user.data_user:
+            return {"code": 200, "mensagem": "Usuário logado com sucesso"}
+        else:
+            return {"code": 401, "mensagem": "Usuário não autorizado"}
+
     def post_user(self, data_user: User):
         """
         Insert new data user

@@ -12,6 +12,14 @@ class UserService:
     """
     User Service with logic
     """
+
+    def login(self, data_user: User):
+        """
+        Login user
+        """
+        data_user.password_user = encript_password_user(data_user.password_user)
+        return user_repository.login_user(data_user)
+
     def get_user_by_code(self, email_user: str):
         """
         Get data user by email user
