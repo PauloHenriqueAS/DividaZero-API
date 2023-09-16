@@ -125,9 +125,10 @@ class StatusEnum(str, Enum):
     """
     Enum of Divida states
     """
-    QUITADA = "Paga"
+    FECHADA = "Fechada"
+    ANALISE = "Em Análise"
     ABERTA = "Aberta"
-    ATRASADA = "Atrasada"
+    Contestada = "Contestada"
     RENEGOCIADA = "Renegociada"
 
 class EstadoCivil(str, Enum):
