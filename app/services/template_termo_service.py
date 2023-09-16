@@ -1,6 +1,3 @@
-from models import Devedor, Credor, Divida, TermoDivida
-
-
 termo1 = '''
 <!DOCTYPE html>
 <html>
@@ -56,7 +53,7 @@ termo_algar = '''
         <strong>CONSIDERANDO</strong> que é do interesse das partes contratantes o acerto de novas condições para a quitação da Dívida;
         <strong>RESOLVEM</strong> as partes celebrar o presente contrato, de comum acordo, segundo as cláusulas e condições: </p>
 
-        <h2>CLÁUSULA PRIMAEIA - OBJETO</h2>
+        <h2>CLÁUSULA PRIMEIRA - OBJETO</h2>
         <ol>
             <li><p>Constitui objeto do presente contrato a confissão e o reconhecimento, pelo <strong>DEVEDOR</strong>, de sua dívida para com o <strong>CREDOR</strong>.</p></li>
         </ol>
@@ -87,7 +84,7 @@ termo_algar = '''
             </ol>
             </li>
             <li>A manutenção do acordo fica condicionada ao pagamento em dia das parcelas e das faturas dos meses correntes, sendo que atrasos ocasionarão o bloqueio imediato de todos os serviços relacionados neste termo, sem prévia notificação;</li>
-        <ol>
+        </ol>
 
         <h2>CLÁUSULA QUINTA - LIQUIDEZ E CERTEZA DA DÍVIDA</h2>
         <ol>
