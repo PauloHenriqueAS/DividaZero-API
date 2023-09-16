@@ -35,7 +35,7 @@ class Endereco(BaseModel):
     Model of Endereco
     """    
     id_endereco: Optional[int] = None
-    lograduro: Optional[str] = None
+    logradouro: Optional[str] = None
     bairro: Optional[str] = None
     numero: Optional[int] = None
     cep: Optional[str] = None
@@ -89,3 +89,7 @@ class Parcela(BaseModel):
     valor_parcela: Optional[float] = None
     data_vencimento: Optional[date] = None
     parcela_paga: Optional[bool] = None
+
+class Parcelamento(BaseModel):
+    valor: float
+    qtd: int
