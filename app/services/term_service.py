@@ -46,7 +46,7 @@ class TermService:
         end_cred = address_repository.get_address_by_id(credor.id_endereco)
         end_dev = address_repository.get_address_by_id(devedor.id_endereco)
         
-        data = data.today()
+        data = data(10,data.today().month)
         
         for parcela in parcelas:
             for i in range(parcela.qtd):
