@@ -64,7 +64,7 @@ class TermService:
                                 data_vencimento = adicionar_meses(data,i+1),
                                 parcela_paga=False))
 
-        render(devedor,credor, divida, end_dev, end_cred,termo)
+        render(devedor,credor, divida, end_dev, end_cred,termo,parcela)
 
 
         ret = term_repository.post_term(termo)

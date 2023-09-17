@@ -5,7 +5,7 @@ from datetime import date
 from num2words import num2words
  
 
-def render(devedor: Devedor, credor: Credor, divida: Divida, end_dev: Endereco, end_cre: Endereco, termo: TermoDivida):
+def render(devedor: Devedor, credor: Credor, divida: Divida, end_dev: Endereco, end_cre: Endereco, termo: TermoDivida, parcelamento:Parcelamento):
     termo_pre = termo_algar.format(
         credorNome = credor.nome,
         credorCNPJ = credor.cnpj,
@@ -26,7 +26,11 @@ def render(devedor: Devedor, credor: Credor, divida: Divida, end_dev: Endereco, 
         dividaValor = divida.montante_atrasado,
         dividaExt = num2words(divida.montante_atrasado, lang='pt_Br'),
         dividaDoc = divida.num_contrato,
-        parcelas = termo.num_parcela,
+        parcelas = f"""
+            <ul>
+                <li>{parcelamento.qtd} ({num2words(parcelamento.qtd, lang='pt_Br')}) parcelas no valor de R$ {parcelamento.valor} ({num2words(parcelamento.valor,lang='pt_BR')} Reais)</li>
+            </ul>
+        """,
         termoData = date.today()
     )
     pdfkit.from_string(termo_pre,output_path=f'Termo_{devedor.nome}.pdf')

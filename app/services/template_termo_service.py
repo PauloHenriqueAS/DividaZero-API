@@ -60,7 +60,7 @@ termo_algar = '''
 
         <h2>CLÁUSULA SEGUNDA - CONFISSÃO E RECONHECIMENTO DE DÍVIDA</h2>
         <ol>
-            <li><p>Pelo presente instrumento o <strong>DEVEDOR</strong> confessa ser devedor do <strong>CREDOR</strong> da quantia de importância <strong>R$ {dividaValor} ({dividaExt})</strong>. Incluso nessa negociação a fatura: {dividaDoc}.</p></li>
+            <li><p>Pelo presente instrumento o <strong>DEVEDOR</strong> confessa ser devedor do <strong>CREDOR</strong> da quantia de importância <strong>R$ {dividaValor} ({dividaExt})</strong>. Incluso nessa negociação o contrato: {dividaDoc}.</p></li>
         </ol>
 
         <h2>CLÁUSULA TERCEIRO - PAGAMENTO</h2>
@@ -88,7 +88,7 @@ termo_algar = '''
 
         <h2>CLÁUSULA QUINTA - LIQUIDEZ E CERTEZA DA DÍVIDA</h2>
         <ol>
-            <li>As importâncias devidas pelo DEVEDOR à ALGAR TELECOM S/A, nos termos deste instrumento, constituem dívidas líquidas, certas e exigíveis, consubstanciando o presente contrato título executivo extrajudicial na forma do art. 585, II, do Código de Processo Civil Brasileiro. As partes acordam e reconhecem que não descaracterizará a liquidez e a certeza do título o simples fato de a determinação dos valores importar prévio cálculo aritmético.</li>
+            <li>As importâncias devidas pelo DEVEDOR à ALGAR TELECOM S/A, nos termos deste instrumento, constituem dívidas líquidas, certas e exigíveis, consubstanciando o presente contrato título executivo extrajudicial na forma do art. 784, III, do Código de Processo Civil Brasileiro. As partes acordam e reconhecem que não descaracterizará a liquidez e a certeza do título o simples fato de a determinação dos valores importar prévio cálculo aritmético.</li>
         </ol>
 
         <h2>CLÁUSULA SEXTA – FORO</h2>
