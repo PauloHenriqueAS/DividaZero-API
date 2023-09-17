@@ -16,13 +16,10 @@ from app import (
     term_router,
     user_router,
 )
-# from app.db.database import init_db
-
-# init_db()
 
 app = FastAPI(
-    title="DividaZero-API",
-    description="DívidaZero API - Regularização e Confissão de Dívidas",
+    title="Algar-API",
+    description="Algar API - Verificação e Confissão de Dívidas",
     version="1.0.0",
 )
 

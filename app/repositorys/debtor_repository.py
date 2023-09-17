@@ -8,7 +8,7 @@ from app.models import Credor
 from app.repositorys.model import CredorDb
 from .configDb import SessionLocal
 from sqlalchemy import func
-from sqlalchemy.exc import IdentifierError
+from sqlalchemy.exc import IntegrityError
 
 class DebtorRepository:
     """
@@ -20,7 +20,7 @@ class DebtorRepository:
         """
         try:
             db = SessionLocal()
-            credor = db.query(CredorDb).filter(CredorDb.cnpj == cnpj).first
+            credor = db.query(CredorDb).filter(CredorDb.cnpj == cnpj).first()
             db.close()
 
             if credor is None:
@@ -37,7 +37,7 @@ class DebtorRepository:
         """
         try:
             db = SessionLocal()
-            credor = db.query(CredorDb).filter(CredorDb.id_credor == id).first
+            credor = db.query(CredorDb).filter(CredorDb.id_credor == id).first()
             db.close()
 
             if credor is None:
