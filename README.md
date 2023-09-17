@@ -15,6 +15,7 @@ Confissões de dívida por devedores e regularização
         <img align="center" alt="Python" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
         <img align="center" alt="FastAPI" height="30" width="40"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg">
         <img align="center" alt="PostgreSQL" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+        <img align="center" alt="AmazonWebService" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg">
     </div>
 </div>
 
@@ -159,6 +160,6 @@ Após esses passos o projeto está pronto para a renderização dos pdf.
 
 | [<img src="https://avatars.githubusercontent.com/u/65378419?v=4" width="100"><br><sub>@PauloHenriqueAS</sub>](https://github.com/PauloHenriqueAS)  |  [<img src="https://avatars.githubusercontent.com/u/43221564?v=4" width="100"><br><sub>@costadev00</sub>](https://github.com/costadev00) | [<img src="https://avatars.githubusercontent.com/u/43917038?v=4" width="100"><br><sub>@matheusjreis</sub>](https://github.com/matheusjreis)  | [<img src="https://avatars.githubusercontent.com/u/62945890?v=4" width="100"><br><sub>@newGabriel</sub>](https://github.com/newGabriel)  |
 | ------------ | ------------ | ------------ | ------------ |
-|   |  |
-[<img src="https://avatars.githubusercontent.com/u/65832126?v=4" width="100"><br><sub>@BruggerPedro</sub>](https://github.com/BruggerPedro)  |  [<img src="https://avatars.githubusercontent.com/u/65620069?v=4" width="100"><br><sub>@flaviozno</sub>](https://github.com/flaviozno) |
+|   |  |    |
+[<img src="https://avatars.githubusercontent.com/u/65832126?v=4" width="100"><br><sub>@BruggerPedro</sub>](https://github.com/BruggerPedro)  |  [<img src="https://avatars.githubusercontent.com/u/65620069?v=4" width="100"><br><sub>@flaviozno</sub>](https://github.com/flaviozno) | [<img src="https://media.licdn.com/dms/image/C4D03AQHPJ8HXvm_K4Q/profile-displayphoto-shrink_200_200/0/1546387772121?e=1700092800&v=beta&t=2qa-DV3JgLKwYc9VO4da4GDlGVbI2Jj1iN60EFj0ZlA" width="100"><br><sub>@Marcelo Lima</sub>](https://www.linkedin.com/in/marcelolimaudi/) |
 </div>
