@@ -30,22 +30,21 @@ class DebtRepository:
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 
-    # def get_all_debt_by_user(self, id_user:int):
-    #     """
-    #     Get all data debt by id user
-    #     """
-    #     try:
-    #         db = SessionLocal()
-    #         divida = db.query(DividaDb).filter(DividaDb.id_divida == id).first()
-    #         db.close()
+    def get_all_debt_by_user(self, id_devedor:str):
+        """
+        Get all data debt by id devedor
+        """
+        try:
+            db = SessionLocal()
+            dividas = db.query(DividaDb).filter(DividaDb.id_devedor == id_devedor).all()
+            db.close()
 
-    #         if divida is None:
-    #             return {"code": 302, "mensagem": "Usuário não cadastrado"}
-    #         else:
-    #             return {divida}
-    #     except IntegrityError as error:
-    #         return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
-
+            if not dividas:
+                return {"code": 302, "mensagem": "Usuário não cadastrado ou sem dívidas"}
+            else:
+                return {"code": 200, "dívidas": [debt.__dict__ for debt in dividas]}
+        except IntegrityError as error:
+            return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 
     def post_debt(self):
         """
