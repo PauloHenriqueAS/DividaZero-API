@@ -5,6 +5,8 @@ Configurations of FastAPI
 """
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from app import (
     address_router,
     dashboard_router,
@@ -21,6 +23,13 @@ app = FastAPI(
     title="Algar-API",
     description="Algar API - Verificação e Confissão de Dívidas",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # app.include_router(authentication_router, prefix="/authentication", tags=["Authentication"])

@@ -80,7 +80,8 @@ class TermService:
         for i in parcelasDb:
             parcels_repository.post_parcels(i)            
 
-        return ret
+        # return ret
+        return True
 
     def update_term(self):
         """

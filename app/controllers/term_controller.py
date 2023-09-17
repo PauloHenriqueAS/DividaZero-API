@@ -7,6 +7,7 @@ This module contains term-related routes.
 from fastapi import APIRouter
 from app.services import term_service
 from app.models import TermoDivida, Parcelamento
+from fastapi.responses import FileResponse
 
 router = APIRouter()
 
@@ -29,7 +30,12 @@ def post_term(termo:TermoDivida, parcelas:Parcelamento):
     """
     Post Term
     """
-    return term_service.post_term(termo,parcelas)
+    term_service.post_term(termo,parcelas)
+    arquivo = './Termo_JohnDoe.pdf'
+    # return term_service.post_term(termo,parcelas)
+    
+    return FileResponse(arquivo, headers={"Content-Disposition": "attachment"})
+    
 
 @router.patch("/UpdateTerm")
 def update_term():

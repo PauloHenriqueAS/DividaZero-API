@@ -29,4 +29,5 @@ def render(devedor: Devedor, credor: Credor, divida: Divida, end_dev: Endereco, 
         parcelas = termo.num_parcela,
         termoData = date.today()
     )
-    pdfkit.from_string(termo_pre,output_path=f'Termo_{devedor.nome}.pdf')
+    nome = devedor.nome.replace(" ", "")
+    pdfkit.from_string(termo_pre,output_path=f'Termo_{nome}.pdf')
