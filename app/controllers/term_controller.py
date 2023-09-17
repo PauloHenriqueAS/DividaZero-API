@@ -11,11 +11,18 @@ from app.models import TermoDivida, Parcelamento
 router = APIRouter()
 
 @router.get("/GetTermById")
-def get_term_by_id():
+def get_term_by_id(id_termo:int):
     """
     Get term by id
     """
-    return term_service.get_term_by_id()
+    return term_service.get_term_by_id(id_termo)
+
+@router.get("/GetAllTermById")
+def get_all_term_by_id(id_user: str):
+    """
+    Get data term by id
+    """
+    return term_service.get_all_term_by_id(id_user)
 
 @router.post("/PostTerm")
 def post_term(termo:TermoDivida, parcelas:Parcelamento):
