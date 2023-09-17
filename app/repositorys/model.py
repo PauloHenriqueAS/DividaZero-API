@@ -112,7 +112,7 @@ class ParcelaDb(Base):
     __table_args__ = {"schema": "divida_zero"}
 
     id_parcela = Column(Integer, primary_key=True, index=True)
-    id_termo = Column(Integer, ForeignKey("TermoDividaDb.id_termo"), nullable=False, index=True)
+    id_termo = Column(Integer, nullable=False, index=True)
     valor_parcela = Column(Double, index=True)
     data_vencimento = Column(Date, index=True)
     parcela_paga = Column(Boolean, index=True, nullable=True)

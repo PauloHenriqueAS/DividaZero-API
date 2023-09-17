@@ -10,6 +10,7 @@ from app.repositorys.lender_repository import lender_repository
 from app.repositorys.debt_repository import debt_repository
 from app.repositorys.debtor_repository import debtor_repository
 from app.repositorys.address_repository import address_repository
+from app.repositorys.parcels_repository import parcels_repository
 from app.services.render_template_service import render
 from app.models import Credor, Devedor, Divida, Endereco, TermoDivida, Parcela, Parcelamento
 from datetime import date, timedelta
@@ -54,18 +55,24 @@ class TermService:
         
         data = date(date.today().year,date.today().month,10)
         
+        parcelasDb = []
     
         for i in range(parcela.qtd):
-            parcelaDb = Parcela(valor_parcela=parcela.valor,
+            parcelasDb.append(Parcela(id_parcela = parcels_repository.generate_id_parcela()+i,
+                                id_termo = termo.id_termo,
+                                valor_parcela = parcela.valor,
                                 data_vencimento = adicionar_meses(data,i+1),
-                                parcela_paga=False)
+                                parcela_paga=False))
 
         render(devedor,credor, divida, end_dev, end_cred,termo)
 
 
-        # TODO: assinatura
+        ret = term_repository.post_term(termo)
 
-        return term_repository.post_term(termo)
+        for i in parcelasDb:
+            parcels_repository.post_parcels(i)            
+
+        return ret
 
     def update_term(self):
         """
