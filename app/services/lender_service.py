@@ -18,6 +18,12 @@ class LenderService:
         """
         return lender_repository.get_lerder_by_cpf()
 
+    def get_lerder_by_id(self,id:str):
+        """
+        Get data lender by id
+        """
+        return lender_repository.get_lerder_by_id(id)
+
     def post_lender(self):
         """
         Insert new data lender

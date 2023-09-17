@@ -18,6 +18,12 @@ class DebtorService:
         """
         return debtor_repository.get_debtor_by_cnpj()
 
+    def get_debtor_by_id(self,id:str):
+        """
+        Get data debtor by cnpj
+        """
+        return debtor_repository.get_debtor_by_id(id)
+
     def post_debtor(self):
         """
         Insert new data debtor

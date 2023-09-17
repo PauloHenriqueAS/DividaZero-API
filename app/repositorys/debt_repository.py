@@ -8,7 +8,7 @@ from app.models import Divida
 from app.repositorys.model import DividaDb
 from .configDb import SessionLocal
 from sqlalchemy import func
-from sqlalchemy.exc import IdentifierError
+from sqlalchemy.exc import IntegrityError
 
 class DebtRepository:
     """
@@ -23,7 +23,7 @@ class DebtRepository:
             divida = db.query(DividaDb).filter(DividaDb.id_divida == id).first
             db.close()
 
-            if credor is None:
+            if divida is None:
                 return {"code": 302, "mensagem": "Usuário não cadastrado"}
             else:
                 return {divida}

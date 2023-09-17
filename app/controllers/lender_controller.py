@@ -16,6 +16,14 @@ def get_lerder_by_cpf():
     """
     return lender_service.get_lerder_by_cpf()
 
+@router.get("/GetLenderById")
+def get_lerder_by_id(id:str):
+    """
+    Get lender by id
+    """
+    return lender_service.get_lerder_by_id(id)
+
+
 @router.post("/PostLender")
 def post_lender():
     """

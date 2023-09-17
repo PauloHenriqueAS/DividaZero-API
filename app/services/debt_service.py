@@ -12,11 +12,11 @@ class DebtService:
     """
     Debt Service
     """
-    def get_debt_by_id(self):
+    def get_debt_by_id(self,id:int):
         """
         Get data address by id
         """
-        return debt_repository.get_debt_by_id()
+        return debt_repository.get_debt_by_id(id)
 
     def post_debt(self):
         """

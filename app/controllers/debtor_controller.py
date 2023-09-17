@@ -16,6 +16,13 @@ def get_debtor_by_cnpj():
     """
     return debtor_service.get_debtor_by_cnpj()
 
+@router.get("/GetDebtorById")
+def get_debtor_by_id(id:str):
+    """
+    Get debtor by id
+    """
+    return debtor_service.get_debtor_by_id(id)
+
 @router.post("/PostDebtor")
 def post_debtor():
     """
