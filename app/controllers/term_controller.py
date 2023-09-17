@@ -37,3 +37,11 @@ def update_term():
     Update term
     """
     return term_service.update_term()
+
+
+@router.get("/GetDados")
+def get_dados():
+    """
+    Update term
+    """
+    return term_service.get_dados()

@@ -37,6 +37,14 @@ class TermService:
         """
         return term_repository.get_term_by_id(id_termo)
     
+    def get_dados(self):
+        """
+        Get data term by id
+        """
+        return {'nome':'John Doe', 'cpf':'225.815.220-89', 'nacionalidade': 'Brasileira', 'estado_civil':'Solteiro', 'endereco': 'Avenida João Naves de Ávila, 2121, Santa Mônica, Uberlândia', 'num_contrato':'3127313921', 
+                'data_divida': '2023-09-16', 'data_renegociacao':'2023-09-17', 'produto':'Internet 5G', 'montante_valor':'500.00', 'montante_atrasado': '500.00'}
+    
+
     def get_all_term_by_id(self, id_user: str):
         """
         Get data term by id
