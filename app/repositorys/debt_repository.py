@@ -22,11 +22,10 @@ class DebtRepository:
             db = SessionLocal()
             divida = db.query(DividaDb).filter(DividaDb.id_divida == id).first()
             db.close()
-
             if divida is None:
                 return {"code": 302, "mensagem": "Usuário não cadastrado"}
             else:
-                return {divida}
+                return divida
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 

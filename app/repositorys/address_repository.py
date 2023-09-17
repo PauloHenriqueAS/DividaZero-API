@@ -27,7 +27,7 @@ class AddressRepository:
             if endereco is None:
                 return {"code": 302, "mensagem": "Endereço não cadastrado"}
             else:
-                return { endereco }
+                return endereco
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 

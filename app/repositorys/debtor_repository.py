@@ -43,7 +43,7 @@ class DebtorRepository:
             if credor is None:
                 return {"code": 302, "mensagem": "Usuário não cadastrado"}
             else:
-                return {credor}
+                return credor
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 
