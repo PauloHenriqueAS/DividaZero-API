@@ -5,14 +5,14 @@ app/services/term_service.py
 This module contains term-methods.
 """
 
-from app.models import User
 from app.repositorys.term_repository import term_repository
 from app.repositorys.lender_repository import lender_repository
 from app.repositorys.debt_repository import debt_repository
 from app.repositorys.debtor_repository import debtor_repository
 from app.repositorys.address_repository import address_repository
+from app.services.render_template_service import render
 from app.models import Credor, Devedor, Divida, Endereco, TermoDivida, Parcela, Parcelamento
-from datetime import date
+from datetime import date, timedelta
 
 def adicionar_meses(data, n):
     # Adicionar n meses à data fornecida
@@ -30,13 +30,19 @@ class TermService:
     """
     Term Service
     """
-    def get_term_by_id(self):
+    def get_term_by_id(self, id_termo:int):
         """
         Get data term by id
         """
-        return term_repository.get_term_by_id()
+        return term_repository.get_term_by_id(id_termo)
+    
+    def get_all_term_by_id(self, id_user: str):
+        """
+        Get data term by id
+        """
+        return term_repository.get_all_term_by_id(id_user)
 
-    def post_term(self, termo:TermoDivida, parcelas:[Parcelamento]):
+    def post_term(self, termo:TermoDivida, parcela:Parcelamento):
         """
         Insert new data term
         """
@@ -46,13 +52,13 @@ class TermService:
         end_cred = address_repository.get_address_by_id(credor.id_endereco)
         end_dev = address_repository.get_address_by_id(devedor.id_endereco)
         
-        data = data(10,data.today().month)
+        data = date(date.today().year,date.today().month,10)
         
-        for parcela in parcelas:
-            for i in range(parcela.qtd):
-                parcelaDb = Parcela(valor_parcela=parcela.valor,
-                                    data_vencimento = adicionar_meses(data,i+1),
-                                    parcela_paga=False)
+    
+        for i in range(parcela.qtd):
+            parcelaDb = Parcela(valor_parcela=parcela.valor,
+                                data_vencimento = adicionar_meses(data,i+1),
+                                parcela_paga=False)
 
         render(devedor,credor, divida, end_dev, end_cred,termo)
 

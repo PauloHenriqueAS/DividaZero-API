@@ -96,7 +96,7 @@ class TermoDividaDb(Base):
     __table_args__ = {"schema": "divida_zero"}
 
     id_termo = Column(Integer, primary_key=True, index=True)
-    id_divida = Column(Integer, ForeignKey("DividaDb.id_divida"), nullable=False, index=True)
+    id_divida = Column(Integer, nullable=False, index=True)
     num_parcela = Column(Integer, index=True)
     termo_renegociacao = Column(Text, index=True)
     data_renegociacao = Column(Date, index=True)

@@ -12,12 +12,18 @@ class DebtService:
     """
     Debt Service
     """
-    def get_debt_by_id(self):
+    def get_debt_by_id(self,id:int):
         """
         Get data address by id
         """
-        return debt_repository.get_debt_by_id()
+        return debt_repository.get_debt_by_id(id)
 
+    def get_all_debt_by_user(self,id_devedor:str):
+        """
+        Get all data address by id devedor
+        """
+        return debt_repository.get_all_debt_by_user(id_devedor)
+    
     def post_debt(self):
         """
         Insert new data debt

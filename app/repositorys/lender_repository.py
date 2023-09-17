@@ -20,7 +20,7 @@ class LenderRepository:
         """
         try:
             db = SessionLocal()
-            devedor = db.query(DevedorDb).filter(DevedorDb.cpf == cpf).first
+            devedor = db.query(DevedorDB).filter(DevedorDB.cpf == cpf).first()
             db.close()
             if devedor is None:
                 return {"code": 302, "mensagem": "Usuário não cadastrado"}
@@ -35,13 +35,13 @@ class LenderRepository:
         """
         try:
             db = SessionLocal()
-            devedor = db.query(DevedorDb).filter(DevedorDb.id_devedor == id).first
+            devedor = db.query(DevedorDB).filter(DevedorDB.id_devedor == id).first()
             db.close()
 
             if devedor is None:
                 return {"code": 302, "mensagem": "Usuário não cadastrado"}
             else:
-                return {devedor}
+                return devedor
         except IntegrityError as error:
             return {"code": 404, "mensagem": f"Erro ao obter usuário. ERRO: {error}"}
 

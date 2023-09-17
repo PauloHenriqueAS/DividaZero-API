@@ -18,6 +18,12 @@ class AddressService:
         """
         return address_repository.get_address_by_cep()
 
+    def get_address_by_id(self,id:int):
+        """
+        Get data address by id
+        """
+        return address_repository.get_address_by_id(id)
+
     def post_address(self):
         """
         Insert new data address

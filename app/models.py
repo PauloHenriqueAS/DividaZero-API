@@ -91,5 +91,5 @@ class Parcela(BaseModel):
     parcela_paga: Optional[bool] = None
 
 class Parcelamento(BaseModel):
-    valor: float
-    qtd: int
+    valor: Optional[float] = None
+    qtd: Optional[int] = None

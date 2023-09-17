@@ -16,6 +16,13 @@ def get_address_by_cep():
     """
     return address_service.get_address_by_cep()
 
+@router.get("/GetAddressById")
+def get_address_by_id(id:int):
+    """
+    Get address by id
+    """
+    return address_service.get_address_by_id(id)
+
 @router.post("/PostAddress")
 def post_address():
     """

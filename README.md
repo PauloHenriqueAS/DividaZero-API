@@ -127,6 +127,14 @@ O projeto foi construido usando o framework [FastApi](https://fastapi.tiangolo.c
 
 - Para rodar a aplicação em desenvolvimento utilize o comando `uvicorn main:app --reload` ele executa a compilação e execução. Navegue até o link gerado no terminal, ex: `http://127.0.0.1:8000`. O aplicativo recarrega automaticamente em caso de mudanças de código em qualquer arquivo que seja modificado.
 
+## 🏗️ Requisitos para renderização do PDF
+- Acesse o site `https://wkhtmltopdf.org/downloads.html` e realize o download especifico de seu sistema.
+- Após ao download do arquivo e seu execução realize o download de todas as dependências do projeto executando o seguinte comando no terminal: 
+```
+pip install -r .\requirements.txt
+```
+Após esses passos o projeto está pronto para a renderização dos pdf.
+
 <hr>
 
 <div align="center">
