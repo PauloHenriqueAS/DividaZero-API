@@ -4,18 +4,11 @@ app/Repositorys/term_repository.py
 This module contains term-methods.
 """
 
-<<<<<<< Updated upstream
 from app.models import TermoDivida
-from app.repositorys.model import TermoDividaDb
-from .configDb import SessionLocal
-from sqlalchemy import func
-from sqlalchemy.exc import IntegrityError
-=======
 from sqlalchemy.exc import IntegrityError
 from .model import DividaDb, TermoDividaDb
 from .configDb import SessionLocal
 from sqlalchemy.orm import joinedload
->>>>>>> Stashed changes
 
 class TermRepository:
     """

@@ -5,18 +5,13 @@ app/services/term_service.py
 This module contains term-methods.
 """
 
-from app.models import User
 from app.repositorys.term_repository import term_repository
 from app.repositorys.lender_repository import lender_repository
 from app.repositorys.debt_repository import debt_repository
 from app.repositorys.debtor_repository import debtor_repository
 from app.repositorys.address_repository import address_repository
-<<<<<<< Updated upstream
 from app.services.render_template_service import render
 from app.models import Credor, Devedor, Divida, Endereco, TermoDivida, Parcela, Parcelamento
-=======
-from app.models import TermoDivida, Parcela, Parcelamento
->>>>>>> Stashed changes
 from datetime import date, timedelta
 
 def adicionar_meses(data, n):
